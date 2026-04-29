@@ -39,12 +39,18 @@ export const Window: React.FC<WindowProps> = ({
       <div className="window-header" onPointerDown={(e) => dragControls.start(e)}>
         <div className="flex items-center gap-2">
           <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#6366f1' }} />
-          <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.8)' }}>{instance.title}</span>
+          <span className="text-xs font-bold" style={{ color: 'white' }}>{instance.title}</span>
         </div>
-        <div className="flex gap-2">
-          <div className="control-btn control-min" onClick={() => onMinimize(instance.id)} />
-          <div className="control-btn control-max" />
-          <div className="control-btn control-close" onClick={() => onClose(instance.id)} />
+        <div className="flex gap-2" style={{ display: 'flex', gap: '8px' }}>
+          <button className="control-btn control-min" onClick={() => onMinimize(instance.id)}>
+            <Minus size={8} color="black" strokeWidth={3} />
+          </button>
+          <button className="control-btn control-max">
+            <Square size={6} color="black" strokeWidth={3} />
+          </button>
+          <button className="control-btn control-close" onClick={() => onClose(instance.id)}>
+            <X size={8} color="black" strokeWidth={3} />
+          </button>
         </div>
       </div>
       <div className="window-content">

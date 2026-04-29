@@ -46,7 +46,6 @@ body {
   border: 1px solid var(--glass-border);
 }
 
-/* Layout Utilities (Vanilla CSS) */
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
 .items-center { align-items: center; }
@@ -76,7 +75,6 @@ body {
 .overflow-hidden { overflow: hidden; }
 .overflow-auto { overflow: auto; }
 
-/* Components */
 .taskbar {
   position: absolute;
   bottom: 12px;
@@ -151,6 +149,23 @@ body {
   overflow: auto;
 }
 
+.control-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.control-btn:hover { transform: scale(1.1); }
+.control-close { background: #ef4444; }
+.control-min { background: #f59e0b; }
+.control-max { background: #10b981; }
+
 .start-menu {
   position: fixed;
   bottom: 80px;
@@ -204,7 +219,6 @@ body {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), transparent);
 }
 
-/* Animations */
 .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
 
