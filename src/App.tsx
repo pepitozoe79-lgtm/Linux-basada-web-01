@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Window } from './components/Window';
 import { AppLauncher } from './components/AppLauncher';
+import { TerminalApp } from './components/TerminalApp';
 import { WindowInstance, AppConfig } from './types';
 import * as Icons from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,25 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const APP_REGISTRY: Record<string, AppConfig> = {
   terminal: { 
     id: 'terminal', name: 'Terminal', icon: 'Terminal', 
-    component: () => (
-      <div className="text-sm font-mono" style={{ lineHeight: '1.6' }}>
-        <div className="text-blue-400">NeoLinux Kernel v6.5.0-generic</div>
-        <div className="text-gray-400" style={{ marginBottom: '16px' }}>Last login: {new Date().toDateString()}</div>
-        <div className="flex gap-2">
-          <span className="text-green-400">guest@neolinux:~$</span>
-          <span style={{ color: 'white' }}>ls -la</span>
-        </div>
-        <div className="text-gray-400" style={{ marginTop: '8px' }}>
-          drwxr-xr-x  2 guest guest  4096 Apr 28 2026 .<br/>
-          drwxr-xr-x  3 root  root   4096 Apr 28 2026 ..<br/>
-          -rw-r--r--  1 guest guest   220 Apr 28 2026 .bashrc
-        </div>
-        <div className="flex gap-2" style={{ marginTop: '16px' }}>
-          <span className="text-green-400">guest@neolinux:~$</span>
-          <span className="animate-pulse" style={{ width: '8px', height: '20px', background: 'rgba(255,255,255,0.5)' }} />
-        </div>
-      </div>
-    ), 
+    component: () => <TerminalApp />, 
     width: 650, height: 420 
   },
   files: { id: 'files', name: 'Files', icon: 'Folder', component: () => (
